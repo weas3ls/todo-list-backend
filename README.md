@@ -109,7 +109,7 @@ Create a new task.
 
 **Request Body:**
 
-    ```
+    ```bash
     {
         "title": "Task Title",
         "color": "blue",
@@ -119,7 +119,7 @@ Create a new task.
 
 **Response Example:**
 
-    ```
+    ```bash
     {
         "id": 1,
         "title": "Task Title",
@@ -132,7 +132,7 @@ Create a new task.
 
 **Validation Errors:**
 
-    ```
+    ```bash
     If title or color is missing:
     {
         "err": "Title and color are required"
@@ -145,13 +145,13 @@ Update an existing task by its ID.
 
 URL Parameter:
 
-    ```
+    ```bash
     :id: The ID of the task to update.
     ```
 
 **Request Body:**
 
-    ```
+    ```bash
     {
         "title": "Updated Title",
         "color": "red",
@@ -161,7 +161,7 @@ URL Parameter:
 
 **Response Example:**
 
-    ```
+    ```bash
     {
         "id": 1,
         "title": "Updated Title",
@@ -174,7 +174,7 @@ URL Parameter:
 
 **Errors:**
 
-    ```
+    ```bash
     If the task with the given ID doesn't exist:
 
     {
@@ -188,7 +188,7 @@ Delete a task by its ID.
 
 URL Parameter:
 
-    ```
+    ```bash
     :id: The ID of the task to delete.
     ```
 
@@ -198,7 +198,7 @@ URL Parameter:
 
 **Errors:**
 
-    ```
+    ```bash
     If the task with the given ID doesn't exist:
     {
         "err": "Task not found"
