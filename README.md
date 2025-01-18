@@ -32,45 +32,40 @@ Make sure you have the following installed on your system:
 
 1. **Clone the Repository**:
 
-    ````bash
+    ```bash
     git clone <repository-url>
     cd to-do-list-backend
-    ```
 
-    ````
+    ```
 
 2. **Install Dependencies: Install all required dependencies using npm:**
 
-    ````bash
+    ```bash
     npm install
-    ```
 
-    ````
+    ```
 
 3. **Setup the Database:**
 
 - Create a database using MySQL
 - Update the DATABASE_URL in your .env file with your database connection
   string:
-    ````bash
+    ```bash
     DATABASE_URL=mysql://<user>:<password>@<host>:<port>/<database>
     ```
-    ````
 
 4. **Run Prisma Migrations: Generate and apply the database schema with
    Prisma:**
 
-    ````bash
+    ```bash
     npx prisma migrate dev --name init
-    ```
 
-    ````
+    ```
 
 5. **Start the Server: Launch the development server:**
-    ````bash
+    ```bash
     npm run dev
     ```
-    ````
 
 ## API Endpoints
 
@@ -87,7 +82,7 @@ http://localhost:3000
 Fetch all tasks.
 
 - **Response Example**:
-    ```json
+    ```
     [
         {
             "id": 1,
@@ -114,7 +109,7 @@ Create a new task.
 
 **Request Body:**
 
-    ```json
+    ```
     {
         "title": "Task Title",
         "color": "blue",
@@ -124,7 +119,7 @@ Create a new task.
 
 **Response Example:**
 
-    ```json
+    ```
     {
         "id": 1,
         "title": "Task Title",
@@ -137,7 +132,7 @@ Create a new task.
 
 **Validation Errors:**
 
-    ```json
+    ```
     If title or color is missing:
     {
         "err": "Title and color are required"
@@ -150,13 +145,13 @@ Update an existing task by its ID.
 
 URL Parameter:
 
-    ```json
+    ```
     :id: The ID of the task to update.
     ```
 
 **Request Body:**
 
-    ```json
+    ```
     {
         "title": "Updated Title",
         "color": "red",
@@ -166,7 +161,7 @@ URL Parameter:
 
 **Response Example:**
 
-    ```json
+    ```
     {
         "id": 1,
         "title": "Updated Title",
@@ -179,7 +174,7 @@ URL Parameter:
 
 **Errors:**
 
-    ```json
+    ```
     If the task with the given ID doesn't exist:
 
     {
@@ -193,7 +188,7 @@ Delete a task by its ID.
 
 URL Parameter:
 
-    ```json
+    ```
     :id: The ID of the task to delete.
     ```
 
@@ -203,7 +198,7 @@ URL Parameter:
 
 **Errors:**
 
-    ```json
+    ```
     If the task with the given ID doesn't exist:
     {
         "err": "Task not found"
