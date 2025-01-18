@@ -108,74 +108,27 @@ Fetch all tasks.
 Create a new task.
 
 **Request Body:**
-
-    ```
-    {
-        "title": "Task Title",
-        "color": "blue",
-        "completed": true
-    }
-    ```
+`     {         "title": "Task Title",         "color": "blue",         "completed": true     }     `
 
 **Response Example:**
-
-    ```
-    {
-        "id": 1,
-        "title": "Task Title",
-        "color": "blue",
-        "completed": true,
-        "createdAt": "2025-01-17T12:00:00.000Z",
-        "updatedAt": "2025-01-17T12:00:00.000Z"
-    }
-    ```
+`     {         "id": 1,         "title": "Task Title",         "color": "blue",         "completed": true,         "createdAt": "2025-01-17T12:00:00.000Z",         "updatedAt": "2025-01-17T12:00:00.000Z"     }     `
 
 **Validation Errors:**
-
-    ```
-    If title or color is missing:
-    {
-        "err": "Title and color are required"
-    }
-    ```
+`     If title or color is missing:     {         "err": "Title and color are required"     }     `
 
 ### **PUT /tasks/:id**
 
 Update an existing task by its ID.
 
-URL Parameter:
-
-    ```
-    :id: The ID of the task to update.
-    ```
+URL Parameter: `     :id: The ID of the task to update.     `
 
 **Request Body:**
-
-    ```
-    {
-        "title": "Updated Title",
-        "color": "red",
-        "completed": false
-    }
-    ```
+`     {         "title": "Updated Title",         "color": "red",         "completed": false     }     `
 
 **Response Example:**
+`     {         "id": 1,         "title": "Updated Title",         "color": "red",         "completed": false,         "createdAt": "2025-01-17T12:00:00.000Z",         "updatedAt": "2025-01-17T12:45:00.000Z"     }     `
 
-    ```
-    {
-        "id": 1,
-        "title": "Updated Title",
-        "color": "red",
-        "completed": false,
-        "createdAt": "2025-01-17T12:00:00.000Z",
-        "updatedAt": "2025-01-17T12:45:00.000Z"
-    }
-    ```
-
-**Errors:**
-
-    ```
-    If the task with the given ID doesn't exist:
+**Errors:** ``` If the task with the given ID doesn't exist:
 
     {
         "err": "Task not found"
@@ -186,21 +139,11 @@ URL Parameter:
 
 Delete a task by its ID.
 
-URL Parameter:
-
-    ```
-    :id: The ID of the task to delete.
-    ```
+URL Parameter: `     :id: The ID of the task to delete.     `
 
 **Response:**
 
 204 No Content
 
 **Errors:**
-
-    ```
-    If the task with the given ID doesn't exist:
-    {
-        "err": "Task not found"
-    }
-    ```
+`     If the task with the given ID doesn't exist:     {         "err": "Task not found"     }     `
