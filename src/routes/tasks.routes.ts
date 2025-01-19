@@ -15,7 +15,14 @@ interface Task {
 //* GET /tasks - Fetch all tasks
 router.get("/", async (req, res) => {
     try {
-        const tasks = await prisma.task.findMany();
+        const tasks = await prisma.task.findMany({
+            orderBy: [
+                //? Incomplete tasks first
+                { completed: "asc" },
+                //? Then order by last updated in descending order
+                { updatedAt: "desc" }
+            ]
+        });
         res.status(200).json(tasks);
     } catch (err) {
         res.status(500).json({ err: "Failed to fetch tasks" });
